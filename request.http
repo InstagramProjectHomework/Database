@@ -1,0 +1,97 @@
+###
+POST http://localhost:9000/api/users HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Juan",
+  "username": "JuanPasotes",
+  "email": "juanito@email.com",
+  "password": "1234",
+  "followers": 0,
+  "followed": 0,
+  "posts": 0
+}
+
+###
+GET http://localhost:9000/api/users HTTP/1.1
+
+###
+GET http://localhost:9000/api/users/6137e2bb2e329eb206b0073e HTTP/1.1
+
+###
+DELETE http://localhost:9000/api/users/62c4d0964291e01f9696e345 HTTP/1.1
+
+###
+PUT http://localhost:9000/api/users/6137e2412e329eb206b0073c HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Juan",
+  "username": "JuanPasotes",
+  "email": "juanito@email.com",
+  "password": "1234",
+  "followers": 0,
+  "followed": 0,
+  "posts": 0
+}
+
+
+//////////////////////////////////////////POSTS///////////////////////////////////////////////////////
+
+###
+POST http://localhost:9000/api/posts HTTP/1.1
+Content-Type: application/json
+
+{
+  "image": "image01",
+  "description": "imagen prrona",
+  "messages": "",
+  "likes": 0
+}
+
+###
+GET http://localhost:9000/api/posts HTTP/1.1
+
+###
+GET http://localhost:9000/api/posts/6137e2bb2e329eb206b0073e HTTP/1.1
+
+###
+DELETE http://localhost:9000/api/posts/62c4cc2ee8a1ae7372808100 HTTP/1.1
+
+###
+PUT http://localhost:9000/api/posts/6137e2412e329eb206b0073c HTTP/1.1
+Content-Type: application/json
+
+{
+  "image": "image01",
+  "description": "imagen prrona",
+  "messages": "",
+  "likes": 0
+}
+
+//////////////////////////////////////////MESSAGES///////////////////////////////////////////////////////
+
+###
+POST http://localhost:9000/api/msgs HTTP/1.1
+Content-Type: application/json
+
+{
+  "dm": "Que onda carnal"
+}
+
+###
+GET http://localhost:9000/api/msgs HTTP/1.1
+
+###
+GET http://localhost:9000/api/msgs/6137e2bb2e329eb206b0073e HTTP/1.1
+
+###
+DELETE http://localhost:9000/api/msgs/62c4d0964291e01f9696e345 HTTP/1.1
+
+###
+PUT http://localhost:9000/api/msgs/6137e2412e329eb206b0073c HTTP/1.1
+Content-Type: application/json
+
+{
+  "dm": "Juan"
+}
