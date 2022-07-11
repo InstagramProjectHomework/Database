@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const bcrypt = require('bcrypt');
 
 const userSchema = mongoose.Schema({
   name: {
@@ -28,6 +29,18 @@ const userSchema = mongoose.Schema({
   posts: {
     type: Number,
     required: false
+  }
+});
+
+//Hashing of password. Attempt #1
+userSchema.pre('save', function (next) {
+  if (this.isModified('password')) {
+    bcrypt.hash(this.password, 10, (err, hash) => {
+      if (err) return next(err);
+
+      this.password = hash;
+      next();
+    });
   }
 });
 
